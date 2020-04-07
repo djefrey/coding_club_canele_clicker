@@ -14,7 +14,19 @@
     <br>
     <a>Vous avez </a><a id="n_canele">0</a><a> canelés !</a>
     <br>
-    <button name="cook">Cuisiner</button>
-    <button name="buy_furnace" disabled=true>Acheter un four</button>
+    <button name="cook"
+      onclick="cookCanele()">Cuisiner</button>
+
+    <button name="buy_furnace">Acheter un four (25 canelés)</button>
+
+    <script>
+    var n_canele = 0;
+
+    function cookCanele()
+    {
+      n_canele++;
+      document.getElementById('n_canele').innerHTML = n_canele;
+    }
+    </script>
   </body>
 </html>
