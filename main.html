@@ -32,6 +32,14 @@
 
     function cookCanele()
     {
+      var rand = Math.random();
+      if(rand > 0.95){
+        n_canele += 5;
+        goldenCanale();
+      }else{
+        n_canele++;
+      }
+
       n_canele++;
       document.getElementById('n_canele').innerHTML = n_canele;
     }
@@ -41,13 +49,18 @@
         n_canele -= price_furnace;
 
         n_furnace++;
-        price_furnace = 25 + n_furnace * n_furnace;
+        price_furnace = 25 + n_furnace * n_furnace * 2;
 
         document.getElementById('n_furnace').innerHTML = n_furnace;
         document.getElementById('price_furnace').innerHTML = price_furnace;
         document.getElementById('n_canele').innerHTML = n_canele;
 
         setInterval(cookCanele, 1000);
+      }
+
+      function goldenCanale()
+      {
+
       }
     }
     </script>
