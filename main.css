@@ -3,14 +3,19 @@ body {
   background-image: url("shop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+  font-size: 18px;
 }
 
 h1 {
   margin-top: 25px;
-  
+
   color: #5f021f;
   text-align: center;
   font-family: "Pacifico";
+  font-weight: bold;
+  font-style: italic;
+  font-size: 65px;
 }
 
 #canele_img {
@@ -19,15 +24,17 @@ h1 {
   margin-left: 15%;
   margin-right: 15%;
 
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
-#n_canele {
-  color: #a47;
-}
-#n_furnace {
-  color: #a47;
+#golden_canele {
+  color: #ffff00;
+  opacity: 0;
+
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .interface{
@@ -41,4 +48,11 @@ h1 {
   text-align: center;
 
   background-color: #ffffccaa;
+}
+
+#n_canele {
+  color: #a47;
+}
+#n_furnace {
+  color: #ff5050;
 }

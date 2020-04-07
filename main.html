@@ -11,6 +11,8 @@
 
     <center><img src="canele.jpg" alt="Canele" id="canele_img"></center>
 
+    <p id="golden_canele">Un canelé doré est apparu !</p>
+
     <div class="interface">
       <br>
 
@@ -25,22 +27,32 @@
     </div>
 
     <script>
+    var hasBeenInit = false;
+
     var n_canele = 0;
 
     var n_furnace = 0;
     var price_furnace = 25;
 
+    function init(){
+      hasBeenInit = true;
+      setInterval(hideGoldenCanele, 100);
+    }
+
     function cookCanele()
     {
+      if(!hasBeenInit){
+        init();
+      }
+
       var rand = Math.random();
-      if(rand > 0.95){
+      if(rand > 0){
         n_canele += 5;
         goldenCanale();
       }else{
         n_canele++;
       }
 
-      n_canele++;
       document.getElementById('n_canele').innerHTML = n_canele;
     }
 
@@ -57,10 +69,19 @@
 
         setInterval(cookCanele, 1000);
       }
+    }
 
-      function goldenCanale()
-      {
+    var opacity = 0;
 
+    function goldenCanale(){
+      opacity = 1;
+    }
+
+    function hideGoldenCanele()
+    {
+      if(opacity >= 0){
+        document.getElementById('golden_canele').style.opacity = opacity;
+        opacity -= 0.05;
       }
     }
     </script>
