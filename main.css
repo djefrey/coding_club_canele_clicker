@@ -1,7 +1,13 @@
 body {
-
+  font-family: "Neutcha";
 }
 
 h1 {
   color: #5f021f;
+  text-align-last: center;
+  font-family: "Pacifico";
+}
+
+#canele_img {
+  width: 100%;
 }
