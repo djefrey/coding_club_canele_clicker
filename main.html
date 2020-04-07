@@ -12,12 +12,11 @@
     <img src="canele.jpg" id="canele_img">
 
     <br>
-    <a>Vous avez </a><a id="n_canele">0</a><a> canelés !</a>
-    <br>
-    <button name="cook"
-      onclick="cookCanele()">Cuisiner</button>
+    <p>Vous avez <span id="n_canele">0</span> canelés !</p>
 
-    <button name="buy_furnace">Acheter un four (25 canelés)</button>
+    <button name="cook" onclick="cookCanele()">Cuisiner</button>
+
+    <button name="buy_furnace" onclick="buyFurnace()">Acheter un four (25 canelés)</button>
 
     <script>
     var n_canele = 0;
@@ -26,6 +25,13 @@
     {
       n_canele++;
       document.getElementById('n_canele').innerHTML = n_canele;
+    }
+
+    function buyFurnace() {
+      if (n_canele >= 25) {
+        n_canele -= 25;
+        setInterval(cookCanele, 1000);
+      }
     }
     </script>
   </body>
