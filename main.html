@@ -36,7 +36,7 @@
 
     function init(){
       hasBeenInit = true;
-      setInterval(hideGoldenCanele, 100);
+      setInterval(hideGoldenCanele, 50);
     }
 
     function cookCanele()
@@ -46,7 +46,7 @@
       }
 
       var rand = Math.random();
-      if(rand > 0){
+      if(rand >= 0.50){
         n_canele += 5;
         goldenCanale();
       }else{
@@ -79,9 +79,9 @@
 
     function hideGoldenCanele()
     {
-      if(opacity >= 0){
+      if(opacity > 0){
+        opacity -= 0.025;
         document.getElementById('golden_canele').style.opacity = opacity;
-        opacity -= 0.05;
       }
     }
     </script>
