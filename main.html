@@ -11,15 +11,18 @@
 
     <img src="canele.jpg" id="canele_img">
 
-    <br>
     <p>Vous avez <span id="n_canele">0</span> canelés !</p>
+    <p>Vous avez <span id="n_furnace">0</span> fours en service !</p>
 
     <button name="cook" onclick="cookCanele()">Cuisiner</button>
 
-    <button name="buy_furnace" onclick="buyFurnace()">Acheter un four (25 canelés)</button>
+    <button name="buy_furnace" onclick="buyFurnace()">Acheter un four (<span id="price_furnace">25</span> canelés)</button>
 
     <script>
     var n_canele = 0;
+
+    var n_furnace = 0;
+    var price_furnace = 25;
 
     function cookCanele()
     {
@@ -28,8 +31,15 @@
     }
 
     function buyFurnace() {
-      if (n_canele >= 25) {
-        n_canele -= 25;
+      if (n_canele >= price_furnace) {
+        n_canele -= price_furnace;
+
+        n_furnace++;
+        price_furnace = 25 + n_furnace * n_furnace;
+
+        document.getElementById('n_furnace').innerHTML = n_furnace;
+        document.getElementById('price_furnace').innerHTML = price_furnace;
+
         setInterval(cookCanele, 1000);
       }
     }
